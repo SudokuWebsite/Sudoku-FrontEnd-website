@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>play</title>
+    <script src="play.js"></script>
+   <style>
+    #start{
+       text-align: center;
+       margin-left: 48%;
+       margin-top:2%;
+       cursor: pointer;
+       width: 9%;
+       height:40px;
+       border-radius: 4px;
+       border: none;
+    }
+    .home{
+        width:50px;
+        float: left;
+        background-color: white;
+    }
+    .choose{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    } 
+    .choose>*{
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+        padding-left: 70px;
+        padding-right:70px;
+    }
+    .game{
+        display: flex;
+        justify-content: center;
+    }
+    .sudboard{
+        padding-top:10px;
+        margin-top:10px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-content: flex-start;
+        height: 600px;
+        width: 600px;
+    }
+    .tile{
+        border: 1px solid black;
+        width: 60px;
+        height:60px;
+        margin:0px;
+        text-align: center;
+        vertical-align: middle;
+        font-size: 40pt;
+    }
+    #numberbox >*{
+        border: 1px solid black;
+        border-radius: 4px;
+        font-size:20pt;
+        width:40px;
+        height:40px;
+        margin-top:5px;
+        margin-left:50px;
+        margin-bottom:7px;
+        text-align: center;
+        cursor: pointer;
+    }
+    .borderbott{
+       border-bottom: 4px black;
+    }
+    .borderrig{
+       border-right: 4px black;
+    }
+    b{
+        background-color: #333333;
+        color: white;
+    }
+    p.selected{
+        background-color: lightblue;
+    }
+    p.inccorect{
+        background-color: red;
+    }
+   </style>
+</head>
+<header>
+    <section>
+        <a href="index.html">
+        <img src="home.jpg" alt="home" class="home"></a>
+    </section>
+ <br>
+ <br>
+ <br>
+    <section>
+        <div class="choose">
+            <div>
+                <h3>Difficulty Level </h3>
+                <label for="101">
+                <input type="radio" value="Easy" name="difficulty" id="di" checked>Easy
+                </label>
+                <label for="102">
+                <input type="radio" value="Medium" name="difficulty" id="dif" >Medium
+                </label>
+                <label for="103">
+                <input type="radio" value="Hard" name="difficulty" id="diff">Hard
+                </label>
+            </div>
+            <div>
+                <h3>Choose time</h3>
+                <label for="104">
+                <input type="radio" value="5min" name="time" id="t" checked>5min
+                </label>
+                <label for="105">
+                <input type="radio" value="10min" name="time" id="ti">10min
+                </label>
+                <label for="106">
+                <input type="radio" value="15min" name="time" id="tim">20min
+                </label>
+            </div>
+        </div>
+    </section>
+    <button id="start">Start game</button>
+</header>
+<body class="bo">
+        <div id="game">
+            <div>
+                <p id="stats"></p>
+                <p id="lives"></p>
+                <p id="timer"></p>
+            </div>
+            <div class="sudboard"></div>
+            <div id="numberbox" class="sub">
+                <p id="one">1</p>
+                <p id="two">2</p>
+                <p id="three">3</p>
+                <p id="four">4</p>
+                <p id="five">5</p>
+                <p id="six">6</p>
+                <p id="seven">7</p>
+                <p id="eight">8</p>
+                <p id="nine">9</p>
+            </div>
+        </div>
+ </div>
+   </main>
+</body>
+</html>
