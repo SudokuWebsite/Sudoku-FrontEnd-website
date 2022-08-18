@@ -16,58 +16,75 @@
        height:40px;
        border-radius: 4px;
        border: none;
+       background-color:#4daea1 ;
     }
     .home{
         width:50px;
         float: left;
         background-color: white;
     }
+    .setting{
+        float: right;
+        width: 50px;
+        justify-content: right;
+        cursor: pointer;
+    }
     .choose{
         display: flex;
-        flex-direction: row;
         justify-content: center;
     } 
-    .choose>*{
+    .choose>*,.dis>*{
         margin-bottom: 10px;
         display: flex;
         align-items: center;
         padding-left: 70px;
         padding-right:70px;
     }
-    .game{
+    .game,.dis{
         display: flex;
+        flex-direction: row;
         justify-content: center;
     }
-    .sudboard{
-        padding-top:10px;
-        margin-top:10px;
+    .dis>*{
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+        padding-left: 70px;
+        padding-right:70px;
+        padding-bottom: 10px;
+    }
+    #sudboard{
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        align-content: flex-start;
-        height: 600px;
-        width: 600px;
+        align-content:flex-start;
+        height:560px;
+        width:560px;
     }
     .tile{
         border: 1px solid black;
-        width: 60px;
+        width:60px;
         height:60px;
-        margin:0px;
+        margin: 0px;
         text-align: center;
         vertical-align: middle;
-        font-size: 40pt;
+        font-size:30pt;
     }
     #numberbox >*{
         border: 1px solid black;
-        border-radius: 4px;
+        border-radius:6px;
         font-size:20pt;
-        width:40px;
-        height:40px;
+        width:50px;
+        height:50px;
         margin-top:5px;
         margin-left:50px;
         margin-bottom:7px;
         text-align: center;
         cursor: pointer;
+        padding-top:3px;
+    }
+    .sub{
+        display: none;
     }
     .borderbott{
        border-bottom: 4px black;
@@ -75,9 +92,9 @@
     .borderrig{
        border-right: 4px black;
     }
-    b{
-        background-color: #333333;
-        color: white;
+    #game{
+        margin-top: 10px;
+        background-color:#f2f2f2;
     }
     p.selected{
         background-color: lightblue;
@@ -92,13 +109,16 @@
         <a href="index.html">
         <img src="home.jpg" alt="home" class="home"></a>
     </section>
+    <section>
+        <img src="setting.jpg" alt="setting" class="setting">
+    </section>
  <br>
  <br>
  <br>
     <section>
         <div class="choose">
             <div>
-                <h3>Difficulty Level </h3>
+                <h3>Difficulty Level: </h3>
                 <label for="101">
                 <input type="radio" value="Easy" name="difficulty" id="di" checked>Easy
                 </label>
@@ -110,7 +130,7 @@
                 </label>
             </div>
             <div>
-                <h3>Choose time</h3>
+                <h3>Choose time:</h3>
                 <label for="104">
                 <input type="radio" value="5min" name="time" id="t" checked>5min
                 </label>
@@ -127,22 +147,24 @@
 </header>
 <body class="bo">
         <div id="game">
-            <div>
+            <div class="dis">
                 <p id="stats"></p>
                 <p id="lives"></p>
                 <p id="timer"></p>
             </div>
-            <div class="sudboard"></div>
-            <div id="numberbox" class="sub">
-                <p id="one">1</p>
-                <p id="two">2</p>
-                <p id="three">3</p>
-                <p id="four">4</p>
-                <p id="five">5</p>
-                <p id="six">6</p>
-                <p id="seven">7</p>
-                <p id="eight">8</p>
-                <p id="nine">9</p>
+            <div class="game">
+                <div id="sudboard"></div>
+                <div id="numberbox" class="sub">
+                    <p id="one">1</p>
+                    <p id="two">2</p>
+                    <p id="three">3</p>
+                    <p id="four">4</p>
+                    <p id="five">5</p>
+                    <p id="six">6</p>
+                    <p id="seven">7</p>
+                    <p id="eight">8</p>
+                    <p id="nine">9</p>
+                </div>
             </div>
         </div>
  </div>
