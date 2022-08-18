@@ -1,0 +1,80 @@
+const easy = [
+    "8-956723-764-23----52-94-7628---97534--358------67-1-864--35-1---7--14651-5946387",
+    "685329174971485326234761859362574981549618732718293465823946517197852643456137298"
+  ];
+  const medium = [
+    "-856-7234-4-982-76------------5647---6382-45-514---6----8249-----63-8-------7-825",
+    "619472583243985617587316924158247369926531478734698152891754236365829741472163895"
+  ];
+  const hard = [
+    "-8------62--7-8-4-7-53-6-------7-8-5---4-1---8-1-6-------8-56-9-6-1-9--29------5-",
+    "712583694639714258845269173521436987367928415498175326184697532253841769976352841"
+  ];
+  
+  window.onload=function(){
+    get("start").addEventListener('click',startgame);
+  }
+  function get(x){
+     return document.getElementById(x)
+  }
+  function query(selector){
+     return document.querySelector(selector)
+  }
+  function queryall(selector){
+    return document.querySelectorAll(selector)
+  }
+  var time;
+  var lives;
+  var timerem;
+  var disableselect;
+ function startgame(){
+     let boad;
+     if(get("di").checked) boad=easy[0];
+     else if(get("dif").checked) boad=medium[0];
+     else boad=hard[0];
+     lives=3;
+     disableselect=false;
+     get('lives').textContent="Lives remaining: 3";
+     genboard(boad);
+     starttimer();
+     get("numberbox").classList.remove("sub")
+   }
+ function genboard (boad){
+    clearboard();
+    for (let i=0;i<81;i++){
+        let tile=document.createElement('div');
+        if (boad[i]!=="-"){
+           tile.textContent=boad[i];
+        }
+        else{
+
+        }
+        tile.classList.add("tile")
+        get("sudboard").append(tile); 
+    } 
+ }
+ function starttimer(){
+      if (get("t").checked) timerem=300;
+      else if(get("ti").checked) timerem=600;
+      else timerem =1200;
+      time=setInterval(function(){
+          timerem --;
+          if(timerem===0) closegame();
+          get("timer").textContent=(timeconvert(timerem));
+      },1000)
+ }
+ function timeconvert(timer){
+      let min=Math.floor(timer/60);
+      if (min<10) min="0"+min;
+      let sec=timer%60;
+      if (sec<10) sec="0"+sec;
+      return min+":"+sec;
+ }
+ function clearboard(){
+    let tiles=queryall(".tile")
+    //to remove all tiles 
+    for(let i=0;i<tiles.length;i++){
+        tiles[i].remove();
+    }
+    if (time) clearTimeout(time);
+}
