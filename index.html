@@ -244,11 +244,15 @@
             </li>
           </ul>
     </div>
-    <div class="sett",id="the">
-        <h3 class="s"><img src="close.jpg" alt="close" class="wrong" onclick="theme">Settings</h3>
+    <div class="sett">
+        <h3 class="s"><img src="close.jpg" alt="close" class="wrong">Settings</h3>
           <h3>Choose theme</h3>
-          <input type="radio" name="color" value="light"><label>Light</label>
-          <input type="radio" name="color" value="dark"><label>Dark</label>
+          <label for="110">
+              <input type="radio" value="dark" name="theme">dark
+          </label>
+          <label for="112">
+             <input type="radio" value="light" name="theme">light
+          </label>
           <br>
         <button class="cre">Apply</button>
     </div>
@@ -272,13 +276,6 @@
      function clo(){
         vis.classList.remove("open");
        }
-       let lis=document.getElementById("the") 
-     function lisi(){
-        vis.classList.add("open");
-     }
-     function theme(){
-        lis.classList.remove("open");
-       }
      let sig=document.getElementById("si")
      function displ(){
          sig.classList.add("open")
@@ -286,18 +283,6 @@
      function cl(){
          sig.classList.remove("open")
      }
-        var background={"light":"white","dark":"grey"}
-        window.onload=function()
-        {
-            var bgcolor=document.getElementsByName("color");
-            for(var i=0;i<bgcolor.length;i++)
-            {
-                bgcolor[i].onclick=function()
-                {
-                    document.body.style.backgroundColor=background[this.value];
-                }
-            }
-        }
  </script>
 </body>
 </html>
